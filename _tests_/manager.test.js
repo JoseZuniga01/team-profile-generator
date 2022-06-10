@@ -3,7 +3,7 @@ const Manager = require('../lib/manager');
 
 // this will create a new object for our manager 
 test('create a new Manager', () => {
-    const employee = new Manager('Vanessa Love', 37, 'vanessa.love@gmail.com', 3895944);
+    const employee = new Manager('Vanessa Love', 370, 'vanessa.love@gmail.com', 3895);
     
     expect(employee.name).toBe("Vanessa Love");
     expect(employee.id).toEqual(expect.any(Number));
@@ -12,7 +12,7 @@ test('create a new Manager', () => {
 })
 
 test('All methids are tested for manager class', () => {
-    const employee = new Manager('Vanessa Love', 37, 'vanessa.love@gmail.com', 3895944);
+    const employee = new Manager('Jose Zuniga', 370, 'josecarlos237@gmail.com', 3895);
 
     expect(employee.getName()).toBe(employee.name);
     expect(employee.getId()).toBe(employee.id);

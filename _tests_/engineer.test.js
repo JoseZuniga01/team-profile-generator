@@ -3,16 +3,16 @@ const Engineer = require('../lib/engineer');
 
 // This will craete new object for engineer 
 test('creates a new Engineer', () => {
-    const employee = new Engineer('Nicole', 90, 'nicole.elisaw@gmail', 'nicolewallace09');
+    const employee = new Engineer('Bryce Trevor', 901, 'bryce.trevor@gmail.com', 'Brycetrevor01');
     
-    expect(employee.name).toBe("Jose Zuniga");
+    expect(employee.name).toBe("Bryce Trevor");
     expect(employee.id).toEqual(expect.any(Number));
     expect(employee.email).toEqual(expect.any(String));
     expect(employee.github).toEqual(expect.any(String));
 })
 
 test('All methids are tested Engineer class', () => {
-    const employee = new Engineer('John Smith', 35, 'johnsmith@gmail.com', 'johnsmith35');
+    const employee = new Engineer('Jose Zuniga', 271, 'josecarlos237@gmail.com', 'josezuniga01' );
   
     expect(employee.getName()).toBe(employee.name);
     expect(employee.getId()).toBe(employee.id);

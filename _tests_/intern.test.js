@@ -3,7 +3,7 @@ const Intern = require('../lib/intern');
 
 // this will create a new object for an intern 
 test('creates a new Intern', () => {
-    const employee = new Intern('Jacob', 18, 'jacobswole@gmail.com', 'Jswole');
+    const employee = new Intern('Jacob Swole', 185, 'jacobswole@gmail.com', 'Jswole');
     
     expect(employee.name).toBe("Jacob Swole");
     expect(employee.id).toEqual(expect.any(Number));
@@ -12,7 +12,7 @@ test('creates a new Intern', () => {
 })
 
 test('All methids are tested for intern class', () => {
-    const employee = new Intern('Jacob Swole', 18, 'jacobswole@gmail.com', 'Jswole');
+    const employee = new Intern('Jose Zuniga', 185, 'josecarlos237@gmail.com', 'Columbia');
 
     expect(employee.getName()).toBe(employee.name);
     expect(employee.getId()).toBe(employee.id);
