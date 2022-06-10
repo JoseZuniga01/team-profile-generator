@@ -1,5 +1,5 @@
 // This will use intern builder 
-const Intern = require('../lib/Intern');
+const Intern = require('../lib/intern');
 
 // this will create a new object for an intern 
 test('creates a new Intern', () => {
