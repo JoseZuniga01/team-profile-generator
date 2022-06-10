@@ -8,7 +8,7 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern'); 
 
-const teamArray = []; 
+const profileArray = []; 
 
 // manager questions 
 const attachManager = () => {
@@ -71,7 +71,7 @@ const attachManager = () => {
         const  { name, id, email, officeNumber } = managerInfo; 
         const manager = new Manager (name, id, email, officeNumber);
 
-        teamArray.push(manager); 
+        profileArray.push(manager); 
         console.log(manager); 
     })
 };
@@ -153,15 +153,15 @@ const attachEmployee = () => {
         },
         {
             type: 'confirm',
-            name: 'confirmAddEmployee',
+            name: 'confirmAttachEmployee',
             message: 'Are there more team members you would like to add?',
             default: false
         }
     ])
     //store all data for employee types
-    .then(employeeData => {
+    .then(employeeInformation => {
 
-        let { name, id, email, role, github, school, confirmAddEmployee } = employeeData; 
+        let { name, id, email, role, github, school, confirmAttachEmployee } = employeeInformation; 
         let employee; 
 
         if (role === "Engineer") {
@@ -175,28 +175,17 @@ const attachEmployee = () => {
             console.log(employee);
         }
 
-        teamArray.push(employee); 
+        profileArray.push(employee); 
 
-        if (confirmAddEmployee) {
-            return attachEmployee(teamArray); 
+        if (confirmAttachEmployee) {
+            return attachEmployee(profileArray); 
         } else {
-            return teamArray;
+            return profileArray;
         }
     })
 
 };
 
-attachManager()
-  .then(addEmployee)
-  .then(teamArray => {
-    return generateHTML(teamArray);
-  })
-  .then(pageHTML => {
-    return writeFile(pageHTML);
-  })
-  .catch(err => {
- console.log(err);
-  });
 
 // write all new profile to HTML file 
 const writeFile = data => {
@@ -210,3 +199,14 @@ const writeFile = data => {
     })
 }; 
 
+attachManager()
+  .then(attachEmployee)
+  .then(profileArray => {
+    return generateHTML(profileArray);
+  })
+  .then(indexHTML => {
+    return writeFile(indexHTML);
+  })
+  .catch(err => {
+ console.log(err);
+  });
